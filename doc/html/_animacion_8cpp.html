@@ -1,0 +1,688 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>BRANDI: Kinect + Simulador: Referencia del Archivo Simulador/Animacion.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">BRANDI: Kinect + Simulador
+   &#160;<span id="projectnumber">Versión 1.0</span>
+   </div>
+   <div id="projectbrief">Programa simulador del robot BRANDI controlado (3 GDL) mediante Kinect.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.3.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valores de enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>&apos;defines&apos;</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Páginas</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_3d4ceeb69e48afd76d4d15277076bfa4.html">Simulador</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">'defines'</a> &#124;
+<a href="#func-members">Funciones</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia del Archivo Animacion.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;GL/freeglut.h&gt;</code><br/>
+<code>#include &lt;math.h&gt;</code><br/>
+<code>#include &quot;<a class="el" href="_animacion_8hpp_source.html">Animacion.hpp</a>&quot;</code><br/>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+'defines'</h2></td></tr>
+<tr class="memitem:a5db8e2dca95a29186e9922e13ed5210f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_animacion_8cpp.html#a5db8e2dca95a29186e9922e13ed5210f">ACI_BASE</a></td></tr>
+<tr class="separator:a5db8e2dca95a29186e9922e13ed5210f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60417abb66178c20d81d41f5ec690480"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_animacion_8cpp.html#a60417abb66178c20d81d41f5ec690480">ACI_MOTOR1</a></td></tr>
+<tr class="separator:a60417abb66178c20d81d41f5ec690480"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf0de1aa4ed101cf21f3b43cfd6ac95b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_animacion_8cpp.html#adf0de1aa4ed101cf21f3b43cfd6ac95b">ACU_BASE2</a></td></tr>
+<tr class="separator:adf0de1aa4ed101cf21f3b43cfd6ac95b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8af0a1fe98e32ec0a5369e6ebb441903"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_animacion_8cpp.html#a8af0a1fe98e32ec0a5369e6ebb441903">ACU_MOTOR2</a></td></tr>
+<tr class="separator:a8af0a1fe98e32ec0a5369e6ebb441903"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc91839236beb651a7793db18ee4706b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_animacion_8cpp.html#afc91839236beb651a7793db18ee4706b">ACU_ESL1</a></td></tr>
+<tr class="separator:afc91839236beb651a7793db18ee4706b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a895973cfc0618c5f369d0590bcd7c16e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_animacion_8cpp.html#a895973cfc0618c5f369d0590bcd7c16e">ACU_MOTOR3</a></td></tr>
+<tr class="separator:a895973cfc0618c5f369d0590bcd7c16e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92b855c769560e78325d7379dbb1acba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_animacion_8cpp.html#a92b855c769560e78325d7379dbb1acba">ACU_MOTOR4</a></td></tr>
+<tr class="separator:a92b855c769560e78325d7379dbb1acba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03eab5a6ae1d74352ea889b030d1171b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_animacion_8cpp.html#a03eab5a6ae1d74352ea889b030d1171b">ACI_MOTOR5</a></td></tr>
+<tr class="separator:a03eab5a6ae1d74352ea889b030d1171b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a15d635a546558f8c68aa0767f7a0f68b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_animacion_8cpp.html#a15d635a546558f8c68aa0767f7a0f68b">Escenario</a> ()</td></tr>
+<tr class="memdesc:a15d635a546558f8c68aa0767f7a0f68b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lleva a cabo la creación y despligue del escenario.  <a href="#a15d635a546558f8c68aa0767f7a0f68b">Más...</a><br/></td></tr>
+<tr class="separator:a15d635a546558f8c68aa0767f7a0f68b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf1bf65560f1a347400f807f2bf8276d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_animacion_8cpp.html#adf1bf65560f1a347400f807f2bf8276d">DibujarRotor</a> (GLfloat separacion, const GLfloat *const ColorMater, GLfloat angulo)</td></tr>
+<tr class="memdesc:adf1bf65560f1a347400f807f2bf8276d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función de utilidad, usada por la función Escenario.  <a href="#adf1bf65560f1a347400f807f2bf8276d">Más...</a><br/></td></tr>
+<tr class="separator:adf1bf65560f1a347400f807f2bf8276d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28482bc381ce414df86e4fdb9e3e6da5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_animacion_8cpp.html#a28482bc381ce414df86e4fdb9e3e6da5">circulo</a> ()</td></tr>
+<tr class="memdesc:a28482bc381ce414df86e4fdb9e3e6da5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcion de utilidad, usada por la función DibujarRotor.  <a href="#a28482bc381ce414df86e4fdb9e3e6da5">Más...</a><br/></td></tr>
+<tr class="separator:a28482bc381ce414df86e4fdb9e3e6da5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a305ebee17ea344137090228bc6edede2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_animacion_8cpp.html#a305ebee17ea344137090228bc6edede2">VentCambios</a> (int w, int h)</td></tr>
+<tr class="memdesc:a305ebee17ea344137090228bc6edede2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Esta función indica el área de la ventana en la que se puede dibujar.  <a href="#a305ebee17ea344137090228bc6edede2">Más...</a><br/></td></tr>
+<tr class="separator:a305ebee17ea344137090228bc6edede2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c58bbb49af3e823e8b2447fd3f5ccd9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_animacion_8cpp.html#a2c58bbb49af3e823e8b2447fd3f5ccd9">controlaTeclasEspec</a> (int key, int x, int y)</td></tr>
+<tr class="memdesc:a2c58bbb49af3e823e8b2447fd3f5ccd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Esta función permite cambiar los valores de los motores y de la camara, mediante el teclado.  <a href="#a2c58bbb49af3e823e8b2447fd3f5ccd9">Más...</a><br/></td></tr>
+<tr class="separator:a2c58bbb49af3e823e8b2447fd3f5ccd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31452117a572bbd96b242db3a1d00840"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_animacion_8cpp.html#a31452117a572bbd96b242db3a1d00840">initLuz</a> ()</td></tr>
+<tr class="memdesc:a31452117a572bbd96b242db3a1d00840"><td class="mdescLeft">&#160;</td><td class="mdescRight">Esta función configura la iluminación del escenario. Asi como la posición del foco.  <a href="#a31452117a572bbd96b242db3a1d00840">Más...</a><br/></td></tr>
+<tr class="separator:a31452117a572bbd96b242db3a1d00840"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c8050af76a2ae0fb1af4d03ab42ff5f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_animacion_8cpp.html#a1c8050af76a2ae0fb1af4d03ab42ff5f">config_Simulador</a> (const int VentanaDespliegue)</td></tr>
+<tr class="memdesc:a1c8050af76a2ae0fb1af4d03ab42ff5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lleva a cabo la configuración inicial requerida por las demás funciones del modulo de Simulación.  <a href="#a1c8050af76a2ae0fb1af4d03ab42ff5f">Más...</a><br/></td></tr>
+<tr class="separator:a1c8050af76a2ae0fb1af4d03ab42ff5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52646bdbc025c008eea005ed9703676e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_animacion_8cpp.html#a52646bdbc025c008eea005ed9703676e">limitar_Motores</a> (void)</td></tr>
+<tr class="memdesc:a52646bdbc025c008eea005ed9703676e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Esta función comprueba no se sobrepasen los limites en los ángulos de los motores, según las especificaciones de BRANDI.  <a href="#a52646bdbc025c008eea005ed9703676e">Más...</a><br/></td></tr>
+<tr class="separator:a52646bdbc025c008eea005ed9703676e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:af603d10e34ff5010a555bb7e5c804bb7"><td class="memItemLeft" align="right" valign="top">GLfloat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_animacion_8cpp.html#af603d10e34ff5010a555bb7e5c804bb7">ex</a></td></tr>
+<tr class="memdesc:af603d10e34ff5010a555bb7e5c804bb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">valor de la posición de la camara en el eje x  <a href="#af603d10e34ff5010a555bb7e5c804bb7">Más...</a><br/></td></tr>
+<tr class="separator:af603d10e34ff5010a555bb7e5c804bb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2922c968f42e163856862cfe83a1607"><td class="memItemLeft" align="right" valign="top">GLfloat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_animacion_8cpp.html#aa2922c968f42e163856862cfe83a1607">ey</a></td></tr>
+<tr class="memdesc:aa2922c968f42e163856862cfe83a1607"><td class="mdescLeft">&#160;</td><td class="mdescRight">valor de la posición de la camara en el eje y  <a href="#aa2922c968f42e163856862cfe83a1607">Más...</a><br/></td></tr>
+<tr class="separator:aa2922c968f42e163856862cfe83a1607"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a684e19aa74d6bd8160e2d7bef6925000"><td class="memItemLeft" align="right" valign="top">GLfloat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_animacion_8cpp.html#a684e19aa74d6bd8160e2d7bef6925000">ez</a></td></tr>
+<tr class="memdesc:a684e19aa74d6bd8160e2d7bef6925000"><td class="mdescLeft">&#160;</td><td class="mdescRight">valor de la posición de la camara en el eje z  <a href="#a684e19aa74d6bd8160e2d7bef6925000">Más...</a><br/></td></tr>
+<tr class="separator:a684e19aa74d6bd8160e2d7bef6925000"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc3d5b984f09fca1cbcac3a225c675e6"><td class="memItemLeft" align="right" valign="top">GLfloat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_animacion_8cpp.html#adc3d5b984f09fca1cbcac3a225c675e6">cx</a></td></tr>
+<tr class="memdesc:adc3d5b984f09fca1cbcac3a225c675e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">valor de la componente x del punto al que observa la camara.  <a href="#adc3d5b984f09fca1cbcac3a225c675e6">Más...</a><br/></td></tr>
+<tr class="separator:adc3d5b984f09fca1cbcac3a225c675e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65daf1b9b41e1c9ef990bc6489f2700c"><td class="memItemLeft" align="right" valign="top">GLfloat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_animacion_8cpp.html#a65daf1b9b41e1c9ef990bc6489f2700c">cy</a></td></tr>
+<tr class="memdesc:a65daf1b9b41e1c9ef990bc6489f2700c"><td class="mdescLeft">&#160;</td><td class="mdescRight">valor de la componente y del punto al que observa la camara.  <a href="#a65daf1b9b41e1c9ef990bc6489f2700c">Más...</a><br/></td></tr>
+<tr class="separator:a65daf1b9b41e1c9ef990bc6489f2700c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adeecafc84badcf5ab77676e4bb549296"><td class="memItemLeft" align="right" valign="top">GLfloat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_animacion_8cpp.html#adeecafc84badcf5ab77676e4bb549296">cz</a></td></tr>
+<tr class="memdesc:adeecafc84badcf5ab77676e4bb549296"><td class="mdescLeft">&#160;</td><td class="mdescRight">valor de la componente z del punto al que observa la camara.  <a href="#adeecafc84badcf5ab77676e4bb549296">Más...</a><br/></td></tr>
+<tr class="separator:adeecafc84badcf5ab77676e4bb549296"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2c7a19107e5e4938cb68fff3780267f"><td class="memItemLeft" align="right" valign="top">GLfloat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_animacion_8cpp.html#af2c7a19107e5e4938cb68fff3780267f">RMotor1</a></td></tr>
+<tr class="memdesc:af2c7a19107e5e4938cb68fff3780267f"><td class="mdescLeft">&#160;</td><td class="mdescRight">variable global, su valor representa el ángulo (medido en grados) de rotación del motor 1 de BRANDI.  <a href="#af2c7a19107e5e4938cb68fff3780267f">Más...</a><br/></td></tr>
+<tr class="separator:af2c7a19107e5e4938cb68fff3780267f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab27d8ce867a2e3171bc535ec1b634dec"><td class="memItemLeft" align="right" valign="top">GLfloat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_animacion_8cpp.html#ab27d8ce867a2e3171bc535ec1b634dec">RMotor2</a></td></tr>
+<tr class="memdesc:ab27d8ce867a2e3171bc535ec1b634dec"><td class="mdescLeft">&#160;</td><td class="mdescRight">variable global, su valor representa el ángulo (medido en grados) de rotación del motor 2 de BRANDI.  <a href="#ab27d8ce867a2e3171bc535ec1b634dec">Más...</a><br/></td></tr>
+<tr class="separator:ab27d8ce867a2e3171bc535ec1b634dec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a052d95a5638d919c20692b43e1348d3a"><td class="memItemLeft" align="right" valign="top">GLfloat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_animacion_8cpp.html#a052d95a5638d919c20692b43e1348d3a">RMotor3</a></td></tr>
+<tr class="memdesc:a052d95a5638d919c20692b43e1348d3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">variable global, su valor representa el ángulo (medido en grados) de rotación del motor 3 de BRANDI.  <a href="#a052d95a5638d919c20692b43e1348d3a">Más...</a><br/></td></tr>
+<tr class="separator:a052d95a5638d919c20692b43e1348d3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e1f4de8f31b27e4efa91f7e75abc064"><td class="memItemLeft" align="right" valign="top">GLfloat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_animacion_8cpp.html#a9e1f4de8f31b27e4efa91f7e75abc064">RMotor4</a></td></tr>
+<tr class="memdesc:a9e1f4de8f31b27e4efa91f7e75abc064"><td class="mdescLeft">&#160;</td><td class="mdescRight">variable global, su valor representa el ángulo (medido en grados) de rotación del motor 4 de BRANDI.  <a href="#a9e1f4de8f31b27e4efa91f7e75abc064">Más...</a><br/></td></tr>
+<tr class="separator:a9e1f4de8f31b27e4efa91f7e75abc064"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51348ecfd49cbf59d8c6174ac848e015"><td class="memItemLeft" align="right" valign="top">GLfloat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_animacion_8cpp.html#a51348ecfd49cbf59d8c6174ac848e015">RMotor5</a></td></tr>
+<tr class="memdesc:a51348ecfd49cbf59d8c6174ac848e015"><td class="mdescLeft">&#160;</td><td class="mdescRight">variable global, su valor representa el ángulo (medido en grados) de rotación del motor 5 de BRANDI.  <a href="#a51348ecfd49cbf59d8c6174ac848e015">Más...</a><br/></td></tr>
+<tr class="separator:a51348ecfd49cbf59d8c6174ac848e015"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a171c94a81118658c459c951f5262dd38"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_animacion_8cpp.html#a171c94a81118658c459c951f5262dd38">winSimulador</a></td></tr>
+<tr class="memdesc:a171c94a81118658c459c951f5262dd38"><td class="mdescLeft">&#160;</td><td class="mdescRight">variable global, indica la dirección de la ventana donde se desplegará el simulador. Esta variable es utilizada por la función escenario e inicializada por la función config_Simulador.  <a href="#a171c94a81118658c459c951f5262dd38">Más...</a><br/></td></tr>
+<tr class="separator:a171c94a81118658c459c951f5262dd38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentación de los 'defines'</h2>
+<a class="anchor" id="a5db8e2dca95a29186e9922e13ed5210f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ACI_BASE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>altura del cilindro que hace de base. </p>
+
+</div>
+</div>
+<a class="anchor" id="a60417abb66178c20d81d41f5ec690480"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ACI_MOTOR1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>altura del cilindro que hace de motor 1. </p>
+
+</div>
+</div>
+<a class="anchor" id="a03eab5a6ae1d74352ea889b030d1171b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ACI_MOTOR5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>altura del cilindro que hace de motor(o rotor) 1 </p>
+
+</div>
+</div>
+<a class="anchor" id="adf0de1aa4ed101cf21f3b43cfd6ac95b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ACU_BASE2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>altura del cubo que hace de base para el motor 2. </p>
+
+</div>
+</div>
+<a class="anchor" id="afc91839236beb651a7793db18ee4706b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ACU_ESL1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>altura del cubo que hace de eslabon 1 </p>
+
+</div>
+</div>
+<a class="anchor" id="a8af0a1fe98e32ec0a5369e6ebb441903"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ACU_MOTOR2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>altura del cubo que hace de motor 2 </p>
+
+</div>
+</div>
+<a class="anchor" id="a895973cfc0618c5f369d0590bcd7c16e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ACU_MOTOR3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>altura del cubo que hace de motor 2 </p>
+
+</div>
+</div>
+<a class="anchor" id="a92b855c769560e78325d7379dbb1acba"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ACU_MOTOR4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>altura del cubo que hace de motor 4 </p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las funciones</h2>
+<a class="anchor" id="a28482bc381ce414df86e4fdb9e3e6da5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void circulo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funcion de utilidad, usada por la función DibujarRotor. </p>
+<p>Crea un circulo (realmente un poligono de 100 lados, aparentemente un circulo). </p>
+<dl class="section see"><dt>Ver también</dt><dd><a class="el" href="_animacion_8hpp.html#adf1bf65560f1a347400f807f2bf8276d" title="Función de utilidad, usada por la función Escenario.">DibujarRotor</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1c8050af76a2ae0fb1af4d03ab42ff5f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void config_Simulador </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>VentanaDespliegue</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lleva a cabo la configuración inicial requerida por las demás funciones del modulo de Simulación. </p>
+<p>Determina la ventana de despligue para la función Escenario, configura la iluminación, y las callbacks glutDisplayFunc, glutReshapeFunc,glutSpecialFunc. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">VentanaDespliegue</td><td>Dirección de la ventana donde se desplegará el simulador. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>Ver también</dt><dd><a class="el" href="_animacion_8hpp.html#a31452117a572bbd96b242db3a1d00840" title="Esta función configura la iluminación del escenario. Asi como la posición del foco.">initLuz</a> </dd>
+<dd>
+<a class="el" href="_animacion_8hpp.html#a15d635a546558f8c68aa0767f7a0f68b" title="Lleva a cabo la creación y despligue del escenario.">Escenario</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2c58bbb49af3e823e8b2447fd3f5ccd9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void controlaTeclasEspec </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Esta función permite cambiar los valores de los motores y de la camara, mediante el teclado. </p>
+<p>Se invoca cada vez que detecta que se presionó una tecla por la callback glutSpecialFunc. </p>
+
+</div>
+</div>
+<a class="anchor" id="adf1bf65560f1a347400f807f2bf8276d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DibujarRotor </td>
+          <td>(</td>
+          <td class="paramtype">GLfloat&#160;</td>
+          <td class="paramname"><em>separacion</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const GLfloat *const&#160;</td>
+          <td class="paramname"><em>ColorMater</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLfloat&#160;</td>
+          <td class="paramname"><em>angulo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Función de utilidad, usada por la función Escenario. </p>
+<p>Dibuja un Rotor, más preciso dos circulos paralelos que simula ser un rotor. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">separacion</td><td>Distancia entre los 2 circulos paralelos. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ColorMater</td><td>Especifica el color del material con el que se han de dibujar los 2 circulos. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">angulo</td><td>Varaiable que hace rotar los circulos con eje en centro, un determinado ángulo. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>Ver también</dt><dd><a class="el" href="_animacion_8hpp.html#a15d635a546558f8c68aa0767f7a0f68b" title="Lleva a cabo la creación y despligue del escenario.">Escenario</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a15d635a546558f8c68aa0767f7a0f68b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Escenario </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lleva a cabo la creación y despligue del escenario. </p>
+<p>Aqui se modelan y se despliegan todos los objetos que son parte del simulador: el BRADI y una rejilla que hace de piso, se invoca esta función cada vez que se necesita redibujar dado un cambio en los angulos de los motores o las variables de la camara, la invocación es llevada a cabo por las callbacks glutDisplayFunc y glutIdleFunc. Consulte la documentación de freeglut para más información.</p>
+
+</div>
+</div>
+<a class="anchor" id="a31452117a572bbd96b242db3a1d00840"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initLuz </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Esta función configura la iluminación del escenario. Asi como la posición del foco. </p>
+<p>Esta función es utilizada por la función config_Simulador. </p>
+<dl class="section see"><dt>Ver también</dt><dd><a class="el" href="_animacion_8hpp.html#a3832bf605feffdf8e39f1fc467791738" title="Lleva a cabo la configuración inicial requerida por las demás funciones del modulo de Simulación...">config_Simulador</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a52646bdbc025c008eea005ed9703676e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void limitar_Motores </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Esta función comprueba no se sobrepasen los limites en los ángulos de los motores, según las especificaciones de BRANDI. </p>
+<p>Esta función es invocada por la función Escenario. </p>
+<dl class="section see"><dt>Ver también</dt><dd><a class="el" href="_animacion_8hpp.html#a15d635a546558f8c68aa0767f7a0f68b" title="Lleva a cabo la creación y despligue del escenario.">Escenario</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a305ebee17ea344137090228bc6edede2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VentCambios </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>h</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Esta función indica el área de la ventana en la que se puede dibujar. </p>
+<p>Además establece el tipo de proyección que se utilizará. Esta función se invoca cada vez se redimensiona la ventana por la callback glutReshapeFunc. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>ancho de la ventana. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>largo de la ventana. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las variables</h2>
+<a class="anchor" id="adc3d5b984f09fca1cbcac3a225c675e6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLfloat cx</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>valor de la componente x del punto al que observa la camara. </p>
+
+</div>
+</div>
+<a class="anchor" id="a65daf1b9b41e1c9ef990bc6489f2700c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLfloat cy</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>valor de la componente y del punto al que observa la camara. </p>
+
+</div>
+</div>
+<a class="anchor" id="adeecafc84badcf5ab77676e4bb549296"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLfloat cz</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>valor de la componente z del punto al que observa la camara. </p>
+
+</div>
+</div>
+<a class="anchor" id="af603d10e34ff5010a555bb7e5c804bb7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLfloat ex</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>valor de la posición de la camara en el eje x </p>
+
+</div>
+</div>
+<a class="anchor" id="aa2922c968f42e163856862cfe83a1607"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLfloat ey</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>valor de la posición de la camara en el eje y </p>
+
+</div>
+</div>
+<a class="anchor" id="a684e19aa74d6bd8160e2d7bef6925000"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLfloat ez</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>valor de la posición de la camara en el eje z </p>
+
+</div>
+</div>
+<a class="anchor" id="af2c7a19107e5e4938cb68fff3780267f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLfloat RMotor1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>variable global, su valor representa el ángulo (medido en grados) de rotación del motor 1 de BRANDI. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab27d8ce867a2e3171bc535ec1b634dec"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLfloat RMotor2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>variable global, su valor representa el ángulo (medido en grados) de rotación del motor 2 de BRANDI. </p>
+
+</div>
+</div>
+<a class="anchor" id="a052d95a5638d919c20692b43e1348d3a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLfloat RMotor3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>variable global, su valor representa el ángulo (medido en grados) de rotación del motor 3 de BRANDI. </p>
+
+</div>
+</div>
+<a class="anchor" id="a9e1f4de8f31b27e4efa91f7e75abc064"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLfloat RMotor4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>variable global, su valor representa el ángulo (medido en grados) de rotación del motor 4 de BRANDI. </p>
+
+</div>
+</div>
+<a class="anchor" id="a51348ecfd49cbf59d8c6174ac848e015"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLfloat RMotor5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>variable global, su valor representa el ángulo (medido en grados) de rotación del motor 5 de BRANDI. </p>
+
+</div>
+</div>
+<a class="anchor" id="a171c94a81118658c459c951f5262dd38"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int winSimulador</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>variable global, indica la dirección de la ventana donde se desplegará el simulador. Esta variable es utilizada por la función escenario e inicializada por la función config_Simulador. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Jueves, 27 de Marzo de 2014 20:02:24 para BRANDI: Kinect + Simulador por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

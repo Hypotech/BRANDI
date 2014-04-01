@@ -1,0 +1,433 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>BRANDI: Kinect + Simulador: Referencia del Archivo Kinect/TrackingKinect.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">BRANDI: Kinect + Simulador
+   &#160;<span id="projectnumber">Versión 1.0</span>
+   </div>
+   <div id="projectbrief">Programa simulador del robot BRANDI controlado (3 GDL) mediante Kinect.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.3.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valores de enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>&apos;defines&apos;</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Páginas</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_50807f6ed730427bfadc6ab1e15e1d71.html">Kinect</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funciones</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia del Archivo TrackingKinect.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;Windows.h&gt;</code><br/>
+<code>#include &lt;NuiApi.h&gt;</code><br/>
+<code>#include &quot;<a class="el" href="_tracking_kinect_8hpp_source.html">TrackingKinect.hpp</a>&quot;</code><br/>
+<code>#include &lt;iostream&gt;</code><br/>
+<code>#include &lt;math.h&gt;</code><br/>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a14da4fe74bfd6906a649d3852ff0c8e9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_tracking_kinect_8cpp.html#a14da4fe74bfd6906a649d3852ff0c8e9">GetKinectFrame</a> ()</td></tr>
+<tr class="memdesc:a14da4fe74bfd6906a649d3852ff0c8e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función que obtiene los ángulos del Kinect.  <a href="#a14da4fe74bfd6906a649d3852ff0c8e9">Más...</a><br/></td></tr>
+<tr class="separator:a14da4fe74bfd6906a649d3852ff0c8e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa6e2b0ecf9821894f8165f958b688c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_tracking_kinect_8cpp.html#aaa6e2b0ecf9821894f8165f958b688c3">ini_Kinect</a> (void)</td></tr>
+<tr class="memdesc:aaa6e2b0ecf9821894f8165f958b688c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configura el kinect de manera adecuada para su utilización.  <a href="#aaa6e2b0ecf9821894f8165f958b688c3">Más...</a><br/></td></tr>
+<tr class="separator:aaa6e2b0ecf9821894f8165f958b688c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae824443b3f661414ba1f2718e17fe97d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_tracking_kinect_8cpp.html#ae824443b3f661414ba1f2718e17fe97d">gotoxy</a> (int x, int y)</td></tr>
+<tr class="memdesc:ae824443b3f661414ba1f2718e17fe97d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función de utilidad para posicionarse en una determina región de la consola.  <a href="#ae824443b3f661414ba1f2718e17fe97d">Más...</a><br/></td></tr>
+<tr class="separator:ae824443b3f661414ba1f2718e17fe97d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add133f9aa17ce38af51f460ecdab1f9b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcoordenada2_d.html">coordenada2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_tracking_kinect_8cpp.html#add133f9aa17ce38af51f460ecdab1f9b">Convertir_a_espacio_80x25</a> (LONG x, LONG y)</td></tr>
+<tr class="memdesc:add133f9aa17ce38af51f460ecdab1f9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convierte el espacio de coordenadas del Kinect a el espacio de cooredenadas de consola.  <a href="#add133f9aa17ce38af51f460ecdab1f9b">Más...</a><br/></td></tr>
+<tr class="separator:add133f9aa17ce38af51f460ecdab1f9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a959c48826d68e0bf79dca3719678c4ff"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_tracking_kinect_8cpp.html#a959c48826d68e0bf79dca3719678c4ff">Convierte_a_Angulo</a> (const <a class="el" href="structcoordenada2_d.html">coordenada2D</a> C1, const <a class="el" href="structcoordenada2_d.html">coordenada2D</a> C2)</td></tr>
+<tr class="memdesc:a959c48826d68e0bf79dca3719678c4ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función de utilidad para convertir coordenadas de Kinect en ángulos.  <a href="#a959c48826d68e0bf79dca3719678c4ff">Más...</a><br/></td></tr>
+<tr class="separator:a959c48826d68e0bf79dca3719678c4ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab086e70cbd8c12b150e758dc23aec50c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_tracking_kinect_8cpp.html#ab086e70cbd8c12b150e758dc23aec50c">Libera_Kinect</a> ()</td></tr>
+<tr class="memdesc:ab086e70cbd8c12b150e758dc23aec50c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Libera adecuadamente el Kinect.  <a href="#ab086e70cbd8c12b150e758dc23aec50c">Más...</a><br/></td></tr>
+<tr class="separator:ab086e70cbd8c12b150e758dc23aec50c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ad0fd6a7bedef7c05946fd77c16cdfbc9"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_tracking_kinect_8cpp.html#ad0fd6a7bedef7c05946fd77c16cdfbc9">AnguloManoIzq</a></td></tr>
+<tr class="memdesc:ad0fd6a7bedef7c05946fd77c16cdfbc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable global que determina el ángulo de la mano izquierda.  <a href="#ad0fd6a7bedef7c05946fd77c16cdfbc9">Más...</a><br/></td></tr>
+<tr class="separator:ad0fd6a7bedef7c05946fd77c16cdfbc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48a5b361c66bd400ffe72b47196c45f7"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_tracking_kinect_8cpp.html#a48a5b361c66bd400ffe72b47196c45f7">AnguloMunyecaIzq</a></td></tr>
+<tr class="memdesc:a48a5b361c66bd400ffe72b47196c45f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable global que determina el ángulo de la muñeca izquierda.  <a href="#a48a5b361c66bd400ffe72b47196c45f7">Más...</a><br/></td></tr>
+<tr class="separator:a48a5b361c66bd400ffe72b47196c45f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa37a8590ed522e754c98317a50dacd19"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_tracking_kinect_8cpp.html#aa37a8590ed522e754c98317a50dacd19">AnguloCodoIzq</a></td></tr>
+<tr class="memdesc:aa37a8590ed522e754c98317a50dacd19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable global que determina el ángulo del codo izquierdo.  <a href="#aa37a8590ed522e754c98317a50dacd19">Más...</a><br/></td></tr>
+<tr class="separator:aa37a8590ed522e754c98317a50dacd19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1053486350a544c79e773bf35e035a83"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_tracking_kinect_8cpp.html#a1053486350a544c79e773bf35e035a83">AnguloManoDer</a></td></tr>
+<tr class="memdesc:a1053486350a544c79e773bf35e035a83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable global que determina el ángulo de la mano derecha.  <a href="#a1053486350a544c79e773bf35e035a83">Más...</a><br/></td></tr>
+<tr class="separator:a1053486350a544c79e773bf35e035a83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ee1770934c704dc5d80ceced85d9ca2"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_tracking_kinect_8cpp.html#a0ee1770934c704dc5d80ceced85d9ca2">AnguloMunyecaDer</a></td></tr>
+<tr class="memdesc:a0ee1770934c704dc5d80ceced85d9ca2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable global que determina el ángulo de la muñeca derecha.  <a href="#a0ee1770934c704dc5d80ceced85d9ca2">Más...</a><br/></td></tr>
+<tr class="separator:a0ee1770934c704dc5d80ceced85d9ca2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af00d001fb77cf17adbb2911e9b068637"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_tracking_kinect_8cpp.html#af00d001fb77cf17adbb2911e9b068637">AnguloCodoDer</a></td></tr>
+<tr class="memdesc:af00d001fb77cf17adbb2911e9b068637"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable global que determina el ángulo del codo derecho.  <a href="#af00d001fb77cf17adbb2911e9b068637">Más...</a><br/></td></tr>
+<tr class="separator:af00d001fb77cf17adbb2911e9b068637"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af261798830c2c38256ed058f3b3db6dc"><td class="memItemLeft" align="right" valign="top">HANDLE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_tracking_kinect_8cpp.html#af261798830c2c38256ed058f3b3db6dc">m_hNextSkeletonEvent</a></td></tr>
+<tr class="memdesc:af261798830c2c38256ed058f3b3db6dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable global que almacena los eventos del kinect.  <a href="#af261798830c2c38256ed058f3b3db6dc">Más...</a><br/></td></tr>
+<tr class="separator:af261798830c2c38256ed058f3b3db6dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentación de las funciones</h2>
+<a class="anchor" id="add133f9aa17ce38af51f460ecdab1f9b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structcoordenada2_d.html">coordenada2D</a> Convertir_a_espacio_80x25 </td>
+          <td>(</td>
+          <td class="paramtype">LONG&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LONG&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convierte el espacio de coordenadas del Kinect a el espacio de cooredenadas de consola. </p>
+<p>Se asume que la consola tiene establecido el tamaño por defecto de 80x25. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>Componente x de una coordenada del espacio Kinect. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>Componente y de una coordenada del espacio Kinect. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a959c48826d68e0bf79dca3719678c4ff"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Convierte_a_Angulo </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structcoordenada2_d.html">coordenada2D</a>&#160;</td>
+          <td class="paramname"><em>C1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structcoordenada2_d.html">coordenada2D</a>&#160;</td>
+          <td class="paramname"><em>C2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Función de utilidad para convertir coordenadas de Kinect en ángulos. </p>
+<p>Esta función es utilizada por la función GetKinectFrame para determina el ángulo de una extremidad con respecto a otra, dadas sus coordenadas en el espacio Kinect. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">C1</td><td>Coordenadas de la extremidad uno. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">C2</td><td>Coordenadas de la extremidad dos. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>El ángulo que existe entre la extremidad 1 y la extremidad 2. </dd></dl>
+<dl class="section see"><dt>Ver también</dt><dd><a class="el" href="_tracking_kinect_8hpp.html#a14da4fe74bfd6906a649d3852ff0c8e9" title="Función que obtiene los ángulos del Kinect.">GetKinectFrame</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a14da4fe74bfd6906a649d3852ff0c8e9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GetKinectFrame </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Función que obtiene los ángulos del Kinect. </p>
+<p>Obtiene los ángulos de las muñecas izquierda y derecha; de las manos izquierda y derecha; y codos izquierdo y derecho. Los valores son almacenados en las variables globales: AnguloManoIzq, AnguloMunyecaIzq, AnguloCodoIzq, AnguloManoDer, AnguloMunyecaDer, AnguloCodoDer. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>1 en caso de exito, 0 en caso de que no se tenga ningún esqueleto. </dd></dl>
+<dl class="section see"><dt>Ver también</dt><dd><a class="el" href="_tracking_kinect_8cpp.html#ad0fd6a7bedef7c05946fd77c16cdfbc9" title="Variable global que determina el ángulo de la mano izquierda.">AnguloManoIzq</a> </dd>
+<dd>
+<a class="el" href="_tracking_kinect_8cpp.html#a48a5b361c66bd400ffe72b47196c45f7" title="Variable global que determina el ángulo de la muñeca izquierda.">AnguloMunyecaIzq</a> </dd>
+<dd>
+<a class="el" href="_tracking_kinect_8cpp.html#aa37a8590ed522e754c98317a50dacd19" title="Variable global que determina el ángulo del codo izquierdo.">AnguloCodoIzq</a> </dd>
+<dd>
+<a class="el" href="main_8cpp.html#a1053486350a544c79e773bf35e035a83" title="Variable global que determina el ángulo de la mano derecha.">AnguloManoDer</a> </dd>
+<dd>
+<a class="el" href="main_8cpp.html#a0ee1770934c704dc5d80ceced85d9ca2" title="Variable global que determina el ángulo de la muñeca derecha.">AnguloMunyecaDer</a> </dd>
+<dd>
+<a class="el" href="main_8cpp.html#af00d001fb77cf17adbb2911e9b068637" title="Variable global que determina el ángulo del codo derecho.">AnguloCodoDer</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae824443b3f661414ba1f2718e17fe97d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gotoxy </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Función de utilidad para posicionarse en una determina región de la consola. </p>
+<p>Esta función es invocada por GetKinectFrame para imprimir la parte superior del esqueleto. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>Especifica la columna de la consola en la que debe posicionarse. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>Especifica el renglón de la consola en el que debe posicionarse. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>Ver también</dt><dd><a class="el" href="_tracking_kinect_8hpp.html#a14da4fe74bfd6906a649d3852ff0c8e9" title="Función que obtiene los ángulos del Kinect.">GetKinectFrame</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aaa6e2b0ecf9821894f8165f958b688c3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ini_Kinect </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Configura el kinect de manera adecuada para su utilización. </p>
+<p>Esta función debe llamarse antes de cualquier operación con el Kinect.Esta función le indica al Kinect su uso en modo esqueleto. Una vez invocada esta función sólo dará importancia a los movimientos que se hagan en la parte superior del cuerpo. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab086e70cbd8c12b150e758dc23aec50c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Libera_Kinect </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Libera adecuadamente el Kinect. </p>
+<p>Destruye el manejador de eventos del Kinect, para su correcta desconexión. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las variables</h2>
+<a class="anchor" id="af00d001fb77cf17adbb2911e9b068637"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float AnguloCodoDer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Variable global que determina el ángulo del codo derecho. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa37a8590ed522e754c98317a50dacd19"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float AnguloCodoIzq</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Variable global que determina el ángulo del codo izquierdo. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1053486350a544c79e773bf35e035a83"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float AnguloManoDer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Variable global que determina el ángulo de la mano derecha. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad0fd6a7bedef7c05946fd77c16cdfbc9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float AnguloManoIzq</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Variable global que determina el ángulo de la mano izquierda. </p>
+
+</div>
+</div>
+<a class="anchor" id="a0ee1770934c704dc5d80ceced85d9ca2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float AnguloMunyecaDer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Variable global que determina el ángulo de la muñeca derecha. </p>
+
+</div>
+</div>
+<a class="anchor" id="a48a5b361c66bd400ffe72b47196c45f7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float AnguloMunyecaIzq</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Variable global que determina el ángulo de la muñeca izquierda. </p>
+
+</div>
+</div>
+<a class="anchor" id="af261798830c2c38256ed058f3b3db6dc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HANDLE m_hNextSkeletonEvent</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Variable global que almacena los eventos del kinect. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Jueves, 27 de Marzo de 2014 20:02:24 para BRANDI: Kinect + Simulador por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

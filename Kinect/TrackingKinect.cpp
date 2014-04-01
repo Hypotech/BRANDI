@@ -1,0 +1,254 @@
+#include <Windows.h>  
+#include <NuiApi.h>
+#include "TrackingKinect.hpp"
+#include <iostream>
+#include <math.h>
+
+/**
+ * @var float AnguloManoIzq
+ * @brief  Variable global que determina el ángulo de la mano izquierda
+ * @var float AnguloMunyecaIzq
+ * @brief  Variable global que determina el ángulo de la muñeca izquierda
+ * @var float AnguloCodoIzq
+ * @brief  Variable global que determina el ángulo del codo izquierdo
+
+ * @var float AnguloManoDer
+ * @brief  Variable global que determina el ángulo de la mano derecha
+ * @var float AnguloMunyecaDer
+ * @brief  Variable global que determina el ángulo de la muñeca derecha
+ * @var float AnguloCodoDer
+ * @brief  Variable global que determina el ángulo del codo derecho
+ */
+
+//######################### Angulos ###########################//
+//Aqui se almacenan los angulos a ser seguidos por el kinect.
+//uselos para determinar que angulo tiene cada extremidad con
+//respecto a la extremidad anterior a esta, por ejemplo: el
+//angulo de la mano izquierda con respecto munyeca izquierda.
+float AnguloManoIzq = 0, AnguloMunyecaIzq = 0, AnguloCodoIzq = 0;
+float AnguloManoDer = 0, AnguloMunyecaDer = 0, AnguloCodoDer = 0;
+//#############################################################//
+
+using namespace std;
+/**
+ * @brief Variable global que almacena los eventos del kinect.
+ */
+HANDLE m_hNextSkeletonEvent;
+
+/**
+ * @brief Función que obtiene los ángulos del Kinect.
+ * @details Obtiene los ángulos de las muñecas izquierda y derecha; de las manos izquierda y derecha; y codos izquierdo y derecho. Los valores son almacenados en las variables globales: AnguloManoIzq, AnguloMunyecaIzq, AnguloCodoIzq, AnguloManoDer, AnguloMunyecaDer, AnguloCodoDer.
+@return 1 en caso de exito, 0 en caso de que no se tenga ningún esqueleto.
+@see AnguloManoIzq
+@see AnguloMunyecaIzq
+@see AnguloCodoIzq
+@see AnguloManoDer
+@see AnguloMunyecaDer
+@see AnguloCodoDer
+ */
+int  GetKinectFrame()
+{
+    NUI_SKELETON_FRAME ourframe;
+    int aux = 0;
+
+    const NUI_TRANSFORM_SMOOTH_PARAMETERS VerySmoothParams = { 0.7f, 0.3f, 1.0f, 1.0f, 1.0f };
+
+    if (WAIT_OBJECT_0 == WaitForSingleObject(m_hNextSkeletonEvent, 20))
+	{
+	    NuiSkeletonGetNextFrame(0, &ourframe);
+	    NuiTransformSmooth(&ourframe, &VerySmoothParams);//se pasa una transformacion de smoothing
+
+	    LONG x, y;
+	    USHORT depth;
+	    int angulo;
+
+	    for (int i = 0; i < NUI_SKELETON_COUNT; ++i) //6
+		{
+		    if (ourframe.SkeletonData[i].eTrackingState == NUI_SKELETON_TRACKED){		//solo 2  esqueletos son correctos hay que recorrerlos todos para saber cual
+			//################################### MANO IZQUIERDA ##############################################
+			Vector4 skeletonPoint = ourframe.SkeletonData[i].SkeletonPositions[NUI_SKELETON_POSITION_HAND_LEFT];
+			NuiTransformSkeletonToDepthImage(skeletonPoint, &x, &y, &depth);
+				
+			coordenada2D CoorManoIzq = Convertir_a_espacio_80x25(x,y);
+			gotoxy(CoorManoIzq.x, CoorManoIzq.y);
+			cout << "O";
+
+			//################################### MUNYECA IZQUIERDA ##############################################
+			skeletonPoint = ourframe.SkeletonData[i].SkeletonPositions[NUI_SKELETON_POSITION_WRIST_LEFT];
+			NuiTransformSkeletonToDepthImage(skeletonPoint, &x, &y, &depth);
+
+			coordenada2D CoorMunyecaIzq = Convertir_a_espacio_80x25(x,y);
+			gotoxy(CoorMunyecaIzq.x, CoorMunyecaIzq.y);
+			cout << "W";
+
+			//################################### CODO IZQUIERDA ##############################################
+			skeletonPoint = ourframe.SkeletonData[i].SkeletonPositions[NUI_SKELETON_POSITION_ELBOW_LEFT];
+			NuiTransformSkeletonToDepthImage(skeletonPoint, &x, &y, &depth);
+
+			coordenada2D CoorCodoIzq = Convertir_a_espacio_80x25(x,y);
+			gotoxy(CoorCodoIzq.x, CoorCodoIzq.y);
+			cout << "P";
+
+			//################################### HOMBRO IZQUIERDO ##############################################
+			skeletonPoint = ourframe.SkeletonData[i].SkeletonPositions[NUI_SKELETON_POSITION_SHOULDER_LEFT];
+			NuiTransformSkeletonToDepthImage(skeletonPoint, &x, &y, &depth);
+
+			coordenada2D CoorHombroIzq = Convertir_a_espacio_80x25(x,y);
+			gotoxy(CoorHombroIzq.x, CoorHombroIzq.y);
+			cout << "Q";
+
+			//################################### HOMBRO DERECHO ##############################################
+			skeletonPoint = ourframe.SkeletonData[i].SkeletonPositions[NUI_SKELETON_POSITION_SHOULDER_RIGHT];
+			NuiTransformSkeletonToDepthImage(skeletonPoint, &x, &y, &depth);
+
+			coordenada2D CoorHombroDer = Convertir_a_espacio_80x25(x,y);
+			gotoxy(CoorHombroDer.x, CoorHombroDer.y);
+			cout << "R";
+
+			//################################### CODO DERECHO ##############################################
+			skeletonPoint = ourframe.SkeletonData[i].SkeletonPositions[NUI_SKELETON_POSITION_ELBOW_RIGHT];
+			NuiTransformSkeletonToDepthImage(skeletonPoint, &x, &y, &depth);
+
+			coordenada2D CoorCodoDer = Convertir_a_espacio_80x25(x,y);
+			gotoxy(CoorCodoDer.x, CoorCodoDer.y);
+			cout << "S";
+
+			//################################### MUNYECA DERECHO ##############################################
+			skeletonPoint = ourframe.SkeletonData[i].SkeletonPositions[NUI_SKELETON_POSITION_WRIST_RIGHT];
+			NuiTransformSkeletonToDepthImage(skeletonPoint, &x, &y, &depth);
+
+			coordenada2D CoorMunyecaDer = Convertir_a_espacio_80x25(x,y);
+			gotoxy(CoorMunyecaDer.x, CoorMunyecaDer.y);
+			cout << "Z";
+
+			//################################### MANO DERECHA ##############################################
+			skeletonPoint = ourframe.SkeletonData[i].SkeletonPositions[NUI_SKELETON_POSITION_HAND_RIGHT];
+			NuiTransformSkeletonToDepthImage(skeletonPoint, &x, &y, &depth);
+
+			coordenada2D CoorManoDer = Convertir_a_espacio_80x25(x,y);
+			gotoxy(CoorManoDer.x, CoorManoDer.y);
+			cout << "T";
+
+			//####################################### CABEZA ##############################################
+			skeletonPoint = ourframe.SkeletonData[i].SkeletonPositions[NUI_SKELETON_POSITION_HEAD];
+			NuiTransformSkeletonToDepthImage(skeletonPoint, &x, &y, &depth);
+
+			coordenada2D CoorCabeza = Convertir_a_espacio_80x25(x,y);
+			gotoxy(CoorCabeza.x, CoorCabeza.y);
+			cout << "H";
+
+
+			//******************* obtener angulo mano izquierda *******************
+			AnguloManoIzq = Convierte_a_Angulo(CoorMunyecaIzq,CoorManoIzq);
+			//*********************************************************************
+
+			//****************** obtener angulo munyeca izquierda *****************
+			AnguloMunyecaIzq = Convierte_a_Angulo(CoorCodoIzq,CoorMunyecaIzq);
+			//*********************************************************************
+
+			//******************* obtener angulo codo izquierda *******************
+			AnguloCodoIzq = Convierte_a_Angulo(CoorHombroIzq,CoorCodoIzq);
+			//*********************************************************************
+
+
+			//******************** obtener angulo mano derecha ********************
+			AnguloManoDer = Convierte_a_Angulo(CoorMunyecaDer,CoorManoDer);
+			//*********************************************************************
+
+			//******************* obtener angulo munyeca derecha ******************
+			AnguloMunyecaDer = Convierte_a_Angulo(CoorCodoDer,CoorMunyecaDer);
+			//*********************************************************************
+
+			//******************** obtener angulo codo derecha ********************
+			AnguloCodoDer = Convierte_a_Angulo(CoorHombroDer,CoorCodoDer);
+			//*********************************************************************
+
+			aux++;
+		    }//if
+		}//for
+	    cout << endl;
+	    system("cls");
+	}//if
+    if (aux == 0)
+	return 0;
+    return 1;
+}
+/**
+ * @brief Configura el kinect de manera adecuada para su utilización.
+ * @details Esta función debe llamarse antes de cualquier operación con el Kinect.Esta función le indica al Kinect su uso en modo esqueleto. Una vez invocada esta función sólo dará importancia a los movimientos que se hagan en la parte superior del cuerpo.
+ */
+void ini_Kinect(void)
+{
+    cout << "Inicializando Kinect..." << endl;
+	NuiInitialize(NUI_INITIALIZE_FLAG_USES_SKELETON);//se ocupara el esqueleto
+    m_hNextSkeletonEvent = CreateEventW(NULL, TRUE, FALSE, NULL); //creamos un manipulador de evento //seguridad por default, reset manual, no senializado, sin nombre de evento
+    NuiSkeletonTrackingEnable(m_hNextSkeletonEvent, 1 | NUI_SKELETON_TRACKING_FLAG_ENABLE_SEATED_SUPPORT);// habilita para usarlo sentado
+}
+
+/**
+ * @brief Función de utilidad para posicionarse en una determina región de la consola.
+ * @details Esta función es invocada por GetKinectFrame para imprimir la parte superior del esqueleto.
+ * @param [in] x Especifica la columna de la consola en la que debe posicionarse.
+ * @param [in] y Especifica el renglón de la consola en el que debe posicionarse.
+ * @see GetKinectFrame
+ */
+void gotoxy(int x, int y)
+{
+
+    COORD coord;
+    coord.X = x;
+    coord.Y = y;
+
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+}
+
+/**
+ * @brief Convierte el espacio de coordenadas del Kinect a el espacio de  cooredenadas de consola.
+ * @details Se asume que la consola tiene establecido el tamaño por defecto de 80x25.
+ * @param [in] x Componente x de una coordenada del espacio Kinect.
+ * @param [in] y Componente y de una coordenada del espacio Kinect.
+ */
+
+coordenada2D Convertir_a_espacio_80x25(LONG x, LONG y)
+{
+    int xx = static_cast<int>(x * 80) / 320;
+    int yy = static_cast<int>(y * 25) / 240;
+
+    if (xx<0) xx = 0; 			if (xx >= 80) xx = 79;			if (yy<0) y = 0;	if (yy >= 25) yy = 24;
+
+	coordenada2D Pantalla80x25;
+    Pantalla80x25.x = xx;
+    Pantalla80x25.y = yy;
+
+    return Pantalla80x25;
+}
+/**
+ * @brief Función de utilidad para convertir coordenadas de Kinect en ángulos.
+ * @details Esta función es utilizada por la función GetKinectFrame para determina el ángulo de una extremidad con respecto a otra, dadas sus coordenadas en el espacio Kinect.
+ * @param [in] C1 Coordenadas de la extremidad uno.
+ * @param [in] C2 Coordenadas de la extremidad dos.
+ * @return El ángulo que existe entre la extremidad 1 y la extremidad 2.
+ * @see GetKinectFrame
+ */
+float Convierte_a_Angulo(const coordenada2D C1, const coordenada2D C2)
+{
+    int A = C2.x - C1.x;
+    int O = C2.y - C1.y;
+
+    return  atan2(O,A) *  180 / PI;
+}
+
+/**
+ * @brief Libera adecuadamente el Kinect.
+ * @details Destruye el manejador de eventos del Kinect, para su correcta desconexión.
+ */
+void Libera_Kinect()
+{
+	system("cls");
+	cout << "Cerrando Kinect ..." << endl;
+	NuiShutdown();
+	CloseHandle(m_hNextSkeletonEvent);
+
+	cout << "**** Adios *****";
+
+}
